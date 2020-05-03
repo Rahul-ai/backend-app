@@ -90,20 +90,12 @@ public class StoreController {
             detail.setCategories(String.join(",", categoryLists));
 
             // Add category detail to details(StoreList)
-            //details.add(detail);
             StoreListResponse.addStoresItem(detail);
         }
 
         // return response entity with StoreLists(details) and Http status
         return new ResponseEntity<StoreListResponse>(StoreListResponse, HttpStatus.OK);
     }
-
-    /**
-     *
-     * @param Store_name
-     * @return List of all Stores matched with given Store name
-     * @throws StoreNotFoundException - when Store name field is empty
-     */
     @RequestMapping(method = RequestMethod.GET, path = "/Store/name/{Store_name}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<StoreListResponse> getStoresByName(@PathVariable String Store_name)
             throws StoreNotFoundException {
@@ -163,7 +155,6 @@ public class StoreController {
             detail.setCategories(String.join(",", categoryLists));
 
             // Add category detail to details(StoreList)
-            //details.add(detail);
 
             StoreListResponse.addStoresItem(detail);
 
