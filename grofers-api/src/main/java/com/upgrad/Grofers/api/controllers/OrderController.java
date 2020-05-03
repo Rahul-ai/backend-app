@@ -74,7 +74,7 @@ public class OrderController {
         CouponDetailsResponse couponDetailsResponse = new CouponDetailsResponse().id(UUID.fromString(couponEntity.getUuid()))
                 .couponName(couponEntity.getCouponName()).percent(couponEntity.getPercent());
 
-        // Returns CouponDetailsResponse with OK https status
+        // Returns CouponDetailsResponse with OK https status 
         return new ResponseEntity<CouponDetailsResponse>(couponDetailsResponse, HttpStatus.OK);
 
     }
