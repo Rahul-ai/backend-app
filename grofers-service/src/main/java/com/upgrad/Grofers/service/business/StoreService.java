@@ -83,7 +83,7 @@ public class StoreBusinessService {
         StoreEntity.setCustomerRating(calculatedRating);
         StoreEntity.setNumCustomersRated(StoreEntity.getNumCustomersRated() + 1);
 
-        //called StoreDao to merge the content and update in the database
+        //called StoreDao to merge the content and update in the database  
         StoreDao.updateStore(StoreEntity);
         return StoreEntity;
     }
