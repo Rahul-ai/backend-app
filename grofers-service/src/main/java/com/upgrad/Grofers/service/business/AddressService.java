@@ -82,11 +82,6 @@ public class AddressService {
                 addressEntity.getUuid() == null || addressEntity.getUuid().isEmpty()) {
             throw new SaveAddressException("SAR-001", "No field can be empty.");
         }
-
-        /*if (stateDao.getStateByUuid(addressEntity.getState().getUuid()) == null) {
-            throw new AddressNotFoundException("ANF-002", "No state by this id");
-        }*/
-
         if (stateDao.getStateById(addressEntity.getState().getId()) == null) {
             throw new AddressNotFoundException("ANF-002", "No state by this id.");
         }
@@ -146,7 +141,6 @@ public class AddressService {
     }
 
     public List<StateEntity> getAllStates() throws AuthorizationFailedException {
-        // customerService.validateAccessToken(bearerToken);
         return stateDao.getAllStates();
     }
 
