@@ -21,7 +21,7 @@ public class PaymentService {
 
     @Transactional
     public PaymentEntity getPaymentById(final Long paymentId) {
-        return paymentDao.getPaymentById(paymentId);
+        return paymentDao.getPaymentById(paymentId); 
     }
 
     @Transactional
