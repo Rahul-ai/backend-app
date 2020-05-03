@@ -48,7 +48,7 @@ public class AddressController {
         addressEntity.setPincode(saveAddressRequest.getPincode());
         addressEntity.setState(addressService.getStateByUUID(saveAddressRequest.getStateUuid()));
         addressEntity.setUuid(UUID.randomUUID().toString());
-        addressEntity.setActive(1);
+        addressEntity.setActive(1); 
 
         // Calls the saveAddress method of address service with the provided attributes
         AddressEntity savedAddressEntity = addressService.saveAddress(addressEntity, bearerToken[1]);
